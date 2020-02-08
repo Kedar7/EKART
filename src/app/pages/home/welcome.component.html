@@ -1,0 +1,26 @@
+﻿<div class="main-content">
+  <div class="flex-container">
+    <div class="flex-box">
+      <img class="open-quote"
+           src="https://img.icons8.com/color/48/000000/quote-left.png">
+      <h3 class="text-center  mt-3 ">Turning big ideas into great products </h3><img class="close-quote"
+           src="https://img.icons8.com/color/48/000000/quote-right.png">
+    </div>
+  </div>
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="img-carousel"
+             src="../../assets//images/nalanda6.jpeg"
+             alt="Random first slide">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="img-carousel"
+             src="../../assets//images/nalanda7.jpg"
+             alt="Random second slide">
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

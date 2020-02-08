@@ -1,0 +1,57 @@
+[
+  {
+    "productId": 1,
+    "productName": "Boy T-Shirt",
+    "productCode": "GDN-0011",
+    "releaseDate": "March 19, 2019",
+    "description": "Boy Shirt",
+    "price": 19.95,
+    "starRating": 3.2,
+    "imageUrl": "assets/images/boy-t-shirt.jpeg",
+    "count" : 1
+  },
+  {
+    "productId": 2,
+    "productName": "Boy Pant",
+    "productCode": "GDN-0023",
+    "releaseDate": "March 18, 2019",
+    "description": "Boy Pant",
+    "price": 32.99,
+    "starRating": 4.2,
+    "imageUrl": "assets/images/boy-pant.jpg",
+    "count" : 1
+  },
+  {
+    "productId": 5,
+    "productName": "Skirt",
+    "productCode": "TBX-0048",
+    "releaseDate": "May 21, 2019",
+    "description": "Skirt",
+    "price": 8.9,
+    "starRating": 4.8,
+    "imageUrl": "assets/images/skirt.jpg",
+    "count" : 1
+  },
+  {
+    "productId": 8,
+    "productName": "Formal",
+    "productCode": "TBX-0022",
+    "releaseDate": "May 15, 2019",
+    "description": "Formal",
+    "price": 11.55,
+    "starRating": 3.7,
+    "imageUrl": "assets/images/formal.jpg",
+    "count" : 1
+  },
+  {
+    "productId": 10,
+    "productName": "Traditional",
+    "productCode": "GMG-0042",
+    "releaseDate": "October 15, 2018",
+    "description": "Traditional",
+    "price": 35.95,
+    "starRating": 4.6,
+    "imageUrl": "assets/images/traditionla.jpg",
+    "count" : 1
+  }
+]

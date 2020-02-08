@@ -1,0 +1,51 @@
+<mat-nav-list>
+    <h6>Shop by Category</h6>
+    <mat-divider></mat-divider>
+    <a mat-list-item
+       routerLinkActive="list-item-active"
+       routerLink="/category/electronics"
+       class="text-align"
+       #one="routerLinkActive" (click)="closeSidebar()" >
+        <div class="text-align">Electronics</div>
+        <i class="material-icons"
+           *ngIf="one.isActive">
+            keyboard_arrow_right
+        </i>
+    </a>
+    <a mat-list-item
+       routerLinkActive="list-item-active"
+       routerLink="/category/machinary"
+       #two="routerLinkActive" (click)="closeSidebar()">
+        <div class="text-align">
+            Machinary
+        </div>
+        <i class="material-icons"
+           *ngIf="two.isActive">
+            keyboard_arrow_right
+        </i>
+    </a>
+    <a mat-list-item
+       routerLinkActive="list-item-active"
+       routerLink="/category/sports"
+       #three="routerLinkActive" (click)="closeSidebar()">
+        <div class="text-align">
+            Sports
+        </div>
+        <i class="material-icons"
+           *ngIf="three.isActive">
+            keyboard_arrow_right
+        </i>
+    </a>
+    <a mat-list-item
+       routerLinkActive="list-item-active"
+       routerLink="/category/clothes"
+       #four="routerLinkActive" (click)="closeSidebar()">
+        <div class="text-align">
+            Clothes
+        </div>
+        <i class="material-icons"
+           *ngIf="four.isActive">
+            keyboard_arrow_right
+        </i>
+    </a>
+</mat-nav-list>

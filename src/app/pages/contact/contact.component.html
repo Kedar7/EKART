@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="flex-container-images">
+                <div>
+                    <img class="img-associates"
+                         src="../../../assets/images/kedar.png">
+                    <h5 class="text-center">Kedar Kulkarni (Front End)</h5>
+                </div>
+                <div>
+                    <img class="img-associates"
+                         src="../../../assets/images/aniketh.jpeg">
+                    <h5 class="text-center">Aniketh Deshpande (Back End)</h5>
+                </div>
+            </div>
+            <div class="row flex-container-contact-info">
+                <div class="col-md-4">
+                    <img src="https://img.icons8.com/pastel-glyph/64/000000/worldwide-location--v2.png">
+                    <h5 class="text-center">Address</h5>
+                    <small class="form-text text-muted text-center">JP Nagar, Bangalore</small>
+                </div>
+                <div class="col-md-4"> <img src="https://img.icons8.com/material-rounded/64/000000/phone--v1.png">
+                    <h5 class="text-center">Phone</h5>
+                    <small class="form-text text-muted text-center"> +91 9036103678</small>
+
+                </div>
+                <div class="col-md-4"> <img src="https://img.icons8.com/material/64/000000/important-mail.png">
+                    <h5 class="text-center">Mail</h5>
+                    <small class="form-text text-muted text-center"> kedar@gmail.com</small>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-5">
+            <h1>GET IN TOUCH WITH <span class="text-primary">US</span></h1>
+            <form (ngSubmit)="processForm()">
+                <!-- name -->
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input class="form-control"
+                           type="text"
+                           id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           name="name"
+                           placeholder="Your Name"
+                           [(ngModel)]="name">
+                </div>
+                <!-- email -->
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email"
+                           class="form-control"
+                           id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Enter email"
+                           name="email"
+                           [(ngModel)]="email">
+                    <small id="emailHelp"
+                           class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+
+
+                <!-- message -->
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">What's on your mind?</label>
+                    <textarea class="form-control"
+                              [(ngModel)]="message"
+                              name="message"
+                              id="exampleFormControlTextarea1"
+                              rows="3"></textarea>
+                </div>
+
+                <button type="submit"
+                        mat-raised-button
+                        color="primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

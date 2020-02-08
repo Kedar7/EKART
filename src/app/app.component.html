@@ -1,0 +1,21 @@
+<div *ngIf="!isMobile">
+  <app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
+  <mat-drawer-container autosize >
+    <mat-drawer mode="side"
+                [opened]="sideBarOpen"
+                class="mat-drawer-size">
+      <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content [ngClass]="{'remove-margin': sideBarOpen==true}">
+      <div [ngClass]="{'backdrop-container': sideBarOpen==true}" (click)="close()">
+        <!-- <div class="category-container">
+    
+          </div> -->
+      </div>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+<div *ngIf="isMobile">
+<h1>Website under construction</h1>
+</div>

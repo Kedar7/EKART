@@ -1,0 +1,57 @@
+[
+  {
+    "productId": 1,
+    "productName": "Table Tennis",
+    "productCode": "GDN-0011",
+    "releaseDate": "March 19, 2019",
+    "description": "Table Tennis",
+    "price": 19.95,
+    "starRating": 3.2,
+    "imageUrl": "assets/images/tt.jpg",
+    "count" : 1
+  },
+  {
+    "productId": 2,
+    "productName": "Cricket",
+    "productCode": "GDN-0023",
+    "releaseDate": "March 18, 2019",
+    "description": "Cricket",
+    "price": 32.99,
+    "starRating": 4.2,
+    "imageUrl": "assets/images/c.jpeg",
+    "count" : 1
+  },
+  {
+    "productId": 5,
+    "productName": "Football",
+    "productCode": "TBX-0048",
+    "releaseDate": "May 21, 2019",
+    "description": "Football",
+    "price": 8.9,
+    "starRating": 4.8,
+    "imageUrl": "assets/images/football.jpg",
+    "count" : 1
+  },
+  {
+    "productId": 8,
+    "productName": "Baseball",
+    "productCode": "TBX-0022",
+    "releaseDate": "May 15, 2019",
+    "description": "Baseball",
+    "price": 11.55,
+    "starRating": 3.7,
+    "imageUrl": "assets/images/base.jpeg",
+    "count" : 1
+  },
+  {
+    "productId": 10,
+    "productName": "Tennis",
+    "productCode": "GMG-0042",
+    "releaseDate": "October 15, 2018",
+    "description": "Tennis",
+    "price": 35.95,
+    "starRating": 4.6,
+    "imageUrl": "assets/images/tennis.jpeg",
+    "count" : 1
+  }
+]

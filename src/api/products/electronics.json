@@ -1,0 +1,52 @@
+[
+    {
+      "productId": 1,
+      "productName": "Washing Machine",
+      "productCode": "GDN-0011",
+      "releaseDate": "March 19, 2019",
+      "description": "Washing Machine",
+      "price": 19.95,
+      "imageUrl": "assets/images/washing-machine.jpg",
+      "count" : 1
+    },
+    {
+      "productId": 2,
+      "productName": "Mobile",
+      "productCode": "GDN-0023",
+      "releaseDate": "March 18, 2019",
+      "description": "This is mobile",
+      "price": 32.99,
+      "imageUrl": "assets/images/mobile.jpg",
+      "count" : 1
+    },
+    {
+      "productId": 5,
+      "productName": "Laptop",
+      "productCode": "TBX-0048",
+      "releaseDate": "May 21, 2019",
+      "description": "Laptop ",
+      "price": 8.9,
+      "imageUrl": "assets/images/laptop.jpeg",
+      "count" : 1
+    },
+    {
+      "productId": 8,
+      "productName": "speaker",
+      "productCode": "TBX-0022",
+      "releaseDate": "May 15, 2019",
+      "description": "speaker",
+      "price": 11.55,
+      "imageUrl": "assets/images/speaker.jpeg",
+      "count" : 1
+    },
+    {
+      "productId": 10,
+      "productName": "Play station",
+      "productCode": "GMG-0042",
+      "releaseDate": "October 15, 2018",
+      "description": "Standard two-button video game controller Play station",
+      "price": 35.95,
+      "imageUrl": "assets/images/play-station.jpg",
+      "count" : 1
+    }
+  ]

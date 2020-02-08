@@ -1,0 +1,115 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
+div.card-header {
+ font-size: large;
+}
+
+div.card {
+  margin-top: 10px
+}
+
+.table {
+  margin-top: 10px
+}
+body{
+  margin: 0;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.main-content{
+  height: 100%;
+  margin-top: -1%;
+}
+.close-quote{
+  position: absolute;
+  right: 8%;
+  top: 0
+}
+.open-quote{
+  position: absolute;
+  left: 9%;
+  top: 0;
+}
+
+.img-carousel{
+  width: 100%;
+}
+.carousel-item {
+  height: 91.9vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.flex-box{
+  background: rgba(0,130,195,0.5);
+  /* opacity: 0.4; */
+  position: absolute;
+  right: 0%;
+  bottom: 0;
+  width: 700px;
+  height:80px;
+  z-index: 10;
+  color: #dbe5ec;
+  border-top: 3px solid #e2e2e2;
+}
+.flex-box:after{
+  position: absolute;
+  content: "";
+  height: 102%;
+  width: 32px;
+  -webkit-transform: skewX(17deg);
+  transform: skewX(-23deg);
+  /* right: 13%; */
+  left: -17px;
+  top: -2%;
+  z-index: 10;
+  background: rgba(0,130,195,0.9);
+  border-left: 32px solid #e2e2e2;
+}
+h2{
+  text-transform: uppercase;
+  font-size: 24px;
+  padding: 8px;
+}
+.angled-div{
+  border-radius: 5px; 
+  position: absolute;
+  right: 0;
+  bottom: 0%;
+  width: 800px;
+  height:60px;
+  background: #141E30;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  transform-origin: left bottom;
+  transform: skew(0deg, -4deg);
+  z-index: 100;
+}
+
+.quote-box{
+  position: absolute;
+  top: 10px !important;
+  left: 5px;
+}
+.footer-box{  
+  position: absolute;
+  bottom: 10px !important;
+  left:5px;
+}
+.carousel-indicators{
+  right: unset !important;
+  left: 0% !important;
+}
+.hr{
+  position: absolute;
+  bottom: 56px;
+  height: 2px;
+  width: 300px;
+  background: lightsalmon;
+  border-radius: 5px;
+}

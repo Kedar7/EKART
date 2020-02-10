@@ -61,7 +61,7 @@ export class HeaderComponent implements OnInit {
     }
   }
   logout(){
-    localStorage.removeItem("username");
+    localStorage.removeItem("__nalanda-user-name");
     this.isHiddenLoginBtn = false;
     this.route.navigate(['/welcome']);
 

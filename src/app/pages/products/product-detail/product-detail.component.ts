@@ -54,6 +54,10 @@ export class ProductDetailComponent implements OnInit {
   }
 
   onBack(): void {
-    this.router.navigate(['/category/' + this.paramCategory]);
+    if(this.paramCategory){
+      this.router.navigate(['/category/' + this.paramCategory]);
+    }else{
+      this.router.navigate(['/category/' + "/electronics"]);
+    }
   }
 }

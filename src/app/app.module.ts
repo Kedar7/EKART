@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
-import { WelcomeComponent } from './pages/home/welcome.component';
 import { ProductModule } from './pages/products/product.module';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HeaderComponent } from './shared/header/header.component'
@@ -23,22 +22,32 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchFilterPipe } from './shared/filter-pipe';
 import { LetterBoldPipe } from './shared/letter-bold.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MycartComponent } from './pages/mycart/mycart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AuthComponent } from './guard/auth.component'
+import { Routes } from '@angular/router';
 import { AuthComponent as AuthGuard } from './guard/auth.component';
-
+const routes: Routes = [
+  {
+    path: 'welcome',
+    loadChildren: './pages/welcome/welcome.module#WelcomeModule'
+  },
+  {
+    path: 'my-cart',
+    loadChildren: './pages/mycart/mycart.module#MyCartModule',
+    canActivate: [AuthGuard]
+  },
+  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+  { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
+]
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
     SidebarComponent,
     HeaderComponent,
     FooterComponent,
     SearchFilterPipe,
     LetterBoldPipe,
-    MycartComponent,
     LoginComponent,
     RegisterComponent,
     AuthComponent
@@ -49,12 +58,7 @@ import { AuthComponent as AuthGuard } from './guard/auth.component';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: 'welcome', component: WelcomeComponent },
-      { path: 'my-cart', component: MycartComponent,canActivate: [AuthGuard] },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
-    ]),
+    RouterModule.forRoot(routes),
     ProductModule,
     LayoutModule,
     MatToolbarModule,
@@ -69,7 +73,7 @@ import { AuthComponent as AuthGuard } from './guard/auth.component';
     MatSnackBarModule,
     MatInputModule
   ],
-  providers: [ AuthComponent],
+  providers: [AuthComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

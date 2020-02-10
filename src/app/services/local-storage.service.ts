@@ -7,10 +7,10 @@ import { environment } from '../../environments/environment';
 export class LocalStorageService {
   constructor(private http: Http) { }
   getData() {
-    let credentials = {};
-    credentials['username'] = localStorage.getItem('__nalanda-user-name');
-    credentials['category'] = localStorage.getItem('__nalanda-category');
-    return credentials;
+    let state = {};
+    state['username'] = localStorage.getItem('__nalanda-user-name');
+    state['category'] = localStorage.getItem('__nalanda-category');
+    return state;
   }
   setData(params, callback) {
     localStorage.setItem('__nalanda-user-name', params.username);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'pm-mycart',
@@ -11,11 +12,22 @@ export class MycartComponent implements OnInit {
   Object = Object;
   uniqueItemsInCart = {};
   itemList = [];
-  constructor(private productservice: ProductService) { }
+  paramCategory;
+  isPresent: boolean = false;
+
+  constructor(private productservice: ProductService, private router: Router) { }
 
   ngOnInit() {
+    this.paramCategory = localStorage.getItem("nalanda_category");
     this.productAddedTocart = this.productservice.getProductFromCart();
     this.removeDuplicateIds(this.productAddedTocart);
+  }
+  goTo(): void {
+    if (this.paramCategory) {
+      this.router.navigate(['/category/' + this.paramCategory]);
+    } else {
+      this.router.navigate(['/category/' + "/electronics"]);
+    }
   }
   removeDuplicateIds(array) {
     array.forEach(obj => {
@@ -28,7 +40,12 @@ export class MycartComponent implements OnInit {
     for (let key in this.uniqueItemsInCart) {
       this.itemList.push(this.uniqueItemsInCart[key]);
     }
+    if (this.itemList.length > 0) {
+      this.isPresent = true;
+    }
     return this.itemList;
   }
-
+  order() {
+    alert("Thank you for ordering!");
+  }
 }

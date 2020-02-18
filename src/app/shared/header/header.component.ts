@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
     }, 300);
   }
   ngOnInit() {
-      .clear();
+    localStorage.clear();
     this.productservice.currentCount.subscribe(msg => {
       this.cartItemCount = msg
     });

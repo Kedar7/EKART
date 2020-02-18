@@ -58,7 +58,7 @@ const routes: Routes = [
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {useHash: true}),
     ProductModule,
     LayoutModule,
     MatToolbarModule,

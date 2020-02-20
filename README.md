@@ -7,6 +7,13 @@ Password: kedar123
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
+Things that need to be done (In progress) : 
+
+1. Implementing BEM (Block, Element, Modifier) and SCSS.
+2. Implement State Management using NgRx.
+3. Need to revamp architecture.
+4. Need to add remove in my-cart component.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

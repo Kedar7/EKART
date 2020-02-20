@@ -13,7 +13,11 @@ button {
   left: 32%;
   background: white;
 }
-
+:host >>> .dropdown-menu {
+  min-width: 26.4rem !important;
+  max-height: 200px;
+  overflow-y: scroll;
+}
 .shoping-cart {
   position: absolute;
   top: -1rem;

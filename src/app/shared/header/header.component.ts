@@ -14,8 +14,8 @@ declare var $: any;
 export class HeaderComponent implements OnInit {
   public model: any;
   products = [];
-  isHiddenLoginBtn : boolean = false;
-  cartItemCount:number=0;
+  isHiddenLoginBtn: boolean = false;
+  cartItemCount: number = 0;
 
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
   constructor(private route: Router, private router: ActivatedRoute, private productservice: ProductService) {
@@ -46,22 +46,25 @@ export class HeaderComponent implements OnInit {
     this.productservice.currentCount.subscribe(msg => {
       this.cartItemCount = msg
     });
-    let id = "machinary";
     $(document).ready(function () {
       $(".trigger").click(function () {
         $(".hamburger").toggleClass("open");
       });
     });
-    this.productservice.getProducts(id).subscribe((data) => {
-      this.products = data;
+    this.productservice.getAllProducts().subscribe((data: []) => {
+      let flatArray = data.reduce((acc, val) => acc.concat(val), []);
+      this.products = flatArray;
     });
   }
-  navigateToProducts() {
-    if (this.model.productId) {
-      this.route.navigate(['/product/' + this.model.productId]);
+
+  selectedItem($event) {
+    $event.preventDefault();
+    this.model = null;
+    if ($event) {
+      this.route.navigate(['/product/' + $event.item.productId]);
     }
   }
-  logout(){
+  logout() {
     localStorage.removeItem("__nalanda-user-name");
     this.isHiddenLoginBtn = false;
     this.route.navigate(['/welcome']);

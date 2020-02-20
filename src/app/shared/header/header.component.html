@@ -16,22 +16,24 @@
             </button>
         </a>
     </div>
-    <img src="https://img.icons8.com/color/48/000000/pied-piper-season-3.png" class="img-logo">
+    <img src="https://img.icons8.com/color/48/000000/pied-piper-season-3.png"
+         class="img-logo">
     <span class="navbar-header"
           routerLink="/welcome"> EKart </span>
     <form class="navbar-form"
-          role="search"
-          (ngSubmit)="navigateToProducts()">
+          role="search">
         <div class="input-group add-on">
             <input id="typeahead-basic"
+                   #input
                    type="text"
                    class="form-control mr-sm-2 mr-50"
                    [(ngModel)]="model"
                    [ngbTypeahead]="search"
-                   [ngModelOptions]="{standalone: true}"
+                   name="model"
                    placeholder="Search"
                    [resultFormatter]="formatter"
-                   [inputFormatter]="formatter" />
+                   [inputFormatter]="formatter"
+                   (selectItem)="selectedItem($event)" />
             <div class="input-group-btn">
                 <button class="btn btn-default search-btn"
                         type="submit"><i class="material-icons">
@@ -48,7 +50,8 @@
         <i class="material-icons color">person</i>
     </span>
     <span *ngIf="isHiddenLoginBtn">
-        <button  class="btn btn-primary" (click)="logout()"
+        <button class="btn btn-primary"
+                (click)="logout()"
                 mat-button> Logout
         </button>
     </span>
@@ -64,7 +67,7 @@
             shopping_cart
         </i>
     </button>
-    <p>{{cartItemCount}}</p>
+    <p >{{cartItemCount}}</p>
     <div class="modal fade bd-example-modal-lg-sign__in"
          id="login"
          tabindex="-1"

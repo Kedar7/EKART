@@ -1,6 +1,6 @@
 [
     {
-      "productId": 1,
+      "productId": 11,
       "productName": "Washing Machine",
       "productCode": "GDN-0011",
       "releaseDate": "March 19, 2019",
@@ -10,7 +10,7 @@
       "count" : 1
     },
     {
-      "productId": 2,
+      "productId": 12,
       "productName": "Mobile",
       "productCode": "GDN-0023",
       "releaseDate": "March 18, 2019",
@@ -20,7 +20,7 @@
       "count" : 1
     },
     {
-      "productId": 5,
+      "productId": 15,
       "productName": "Laptop",
       "productCode": "TBX-0048",
       "releaseDate": "May 21, 2019",
@@ -30,7 +30,7 @@
       "count" : 1
     },
     {
-      "productId": 8,
+      "productId": 18,
       "productName": "speaker",
       "productCode": "TBX-0022",
       "releaseDate": "May 15, 2019",
@@ -40,7 +40,7 @@
       "count" : 1
     },
     {
-      "productId": 10,
+      "productId": 19,
       "productName": "Play station",
       "productCode": "GMG-0042",
       "releaseDate": "October 15, 2018",

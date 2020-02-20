@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, forkJoin } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 import { IProduct } from './product';
 import { Subject } from 'rxjs'
 import { LocalStorageService } from '../services/local-storage.service';
-
+import { url } from 'inspector';
+import { of } from 'rxjs';
+import { concatMap, delay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -39,21 +41,29 @@ export class ProductService {
   }
   getProducts(id): Observable<IProduct[]> {
     this.mapId = id;
-    console.log(id);
     let mainUrl = this.urlMap[id];
     return this.http.get<IProduct[]>(mainUrl)
       .pipe(
         catchError(this.handleError)
       );
   }
-
-  getProduct(id: number): Observable<IProduct | undefined> {
-    // let category = this.localStorageService.getData();
-    let paramCategory = localStorage.getItem("nalanda_category");
-    return this.getProducts(paramCategory)
-      .pipe(
-        map((products: IProduct[]) => products.find(p => p.productId === id))
-      );
+  getAllProducts() {
+    let calls = [];
+    for (let each in this.urlMap) {
+      calls.push(this.http.get(this.urlMap[each]));
+    }
+    return forkJoin(calls);
+  }
+  getProduct(id: number) {
+    let foundProduct;
+    return this.getAllProducts()
+      .pipe(map((products: IProduct[]) => {
+        let flatArray = products.reduce((acc, val) => acc.concat(val), []);
+        foundProduct = flatArray.find(p => 
+          p.productId === id
+        );
+        return foundProduct;
+      }));
   }
   addProductToCart(products: any) {
     localStorage.setItem("product", JSON.stringify(products));

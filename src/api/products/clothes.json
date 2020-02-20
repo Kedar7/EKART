@@ -1,6 +1,6 @@
 [
   {
-    "productId": 1,
+    "productId": 21,
     "productName": "Boy T-Shirt",
     "productCode": "GDN-0011",
     "releaseDate": "March 19, 2019",
@@ -11,7 +11,7 @@
     "count" : 1
   },
   {
-    "productId": 2,
+    "productId": 22,
     "productName": "Boy Pant",
     "productCode": "GDN-0023",
     "releaseDate": "March 18, 2019",
@@ -22,7 +22,7 @@
     "count" : 1
   },
   {
-    "productId": 5,
+    "productId": 25,
     "productName": "Skirt",
     "productCode": "TBX-0048",
     "releaseDate": "May 21, 2019",
@@ -33,7 +33,7 @@
     "count" : 1
   },
   {
-    "productId": 8,
+    "productId": 28,
     "productName": "Formal",
     "productCode": "TBX-0022",
     "releaseDate": "May 15, 2019",
@@ -44,7 +44,7 @@
     "count" : 1
   },
   {
-    "productId": 10,
+    "productId": 29,
     "productName": "Traditional",
     "productCode": "GMG-0042",
     "releaseDate": "October 15, 2018",

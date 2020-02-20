@@ -30,12 +30,9 @@ export class ProductDetailComponent implements OnInit {
     }
   }
   getProduct(id: number) {
-    this.productService.getProduct(id).subscribe({
-      next: product => {
-        this.product = product;
-        this.ngOnInit();
-      },
-      error: err => this.errorMessage = err
+    this.productService.getProduct(id).subscribe((data)=>{
+      this.product = data;
+      this.ngOnInit();
     });
   }
   addToCart(product) {

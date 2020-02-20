@@ -1,6 +1,6 @@
 [
   {
-    "productId": 1,
+    "productId": 6,
     "productName": "Leaf Rake",
     "productCode": "GDN-0011",
     "releaseDate": "March 19, 2019",
@@ -11,7 +11,7 @@
     "count" : 1
   },
   {
-    "productId": 2,
+    "productId": 7,
     "productName": "Garden Cart",
     "productCode": "GDN-0023",
     "releaseDate": "March 18, 2019",
@@ -22,7 +22,7 @@
     "count" : 1
   },
   {
-    "productId": 5,
+    "productId": 8,
     "productName": "Hammer",
     "productCode": "TBX-0048",
     "releaseDate": "May 21, 2019",
@@ -33,7 +33,7 @@
     "count" : 1
   },
   {
-    "productId": 8,
+    "productId": 9,
     "productName": "Saw",
     "productCode": "TBX-0022",
     "releaseDate": "May 15, 2019",

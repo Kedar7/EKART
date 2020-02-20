@@ -4,10 +4,9 @@ form {
 
 .img-associates {
     max-width: 480px;
-    width: 70%;
     height: 188px;
     display: block;
-    margin: 10px auto;
+    margin: 10px 13rem;
     border: 1px solid #ddd;
     border-radius: 5px;
 }

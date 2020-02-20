@@ -18,7 +18,7 @@ export class MycartComponent implements OnInit {
   constructor(private productservice: ProductService, private router: Router) { }
 
   ngOnInit() {
-    this.paramCategory = localStorage.getItem("nalanda_category");
+    this.paramCategory = localStorage.getItem("ekart_category");
     this.productAddedTocart = this.productservice.getProductFromCart();
     this.removeDuplicateIds(this.productAddedTocart);
   }

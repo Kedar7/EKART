@@ -6,9 +6,6 @@ import { BehaviorSubject } from 'rxjs';
 import { IProduct } from './product';
 import { Subject } from 'rxjs'
 import { LocalStorageService } from '../services/local-storage.service';
-import { url } from 'inspector';
-import { of } from 'rxjs';
-import { concatMap, delay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,6 +17,10 @@ export class ProductService {
     "sports": 'api/products/sports.json',
     "clothes": 'api/products/clothes.json',
   };
+
+  private triggerSubject = new BehaviorSubject(1);
+  triggerEnter = this.triggerSubject.asObservable();
+
   private currentCartCount = new BehaviorSubject(0);
   currentCount = this.currentCartCount.asObservable();
 
@@ -30,6 +31,10 @@ export class ProductService {
   mapId;
   productAddedTocart = [];
   constructor(private http: HttpClient, private localStorageService: LocalStorageService) { }
+
+  triggerMessage(message) {
+    return this.triggerSubject.next(message);
+  }
   changeMessage(message: boolean) {
     this.messgeSource.next(message);
   }
@@ -59,7 +64,7 @@ export class ProductService {
     return this.getAllProducts()
       .pipe(map((products: IProduct[]) => {
         let flatArray = products.reduce((acc, val) => acc.concat(val), []);
-        foundProduct = flatArray.find(p => 
+        foundProduct = flatArray.find(p =>
           p.productId === id
         );
         return foundProduct;

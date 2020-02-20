@@ -16,31 +16,33 @@ export class ProductDetailComponent implements OnInit {
   addToCartMsg;
   cartItemCount;
   isAddToCart: boolean;
+  isCalled : boolean = true;
 
   constructor(private route: ActivatedRoute,
     private router: Router,
     private productService: ProductService, private localStorageService: LocalStorageService) {
   }
   ngOnInit() {
-    this.paramCategory = localStorage.getItem("nalanda_category");
-    const param = this.route.snapshot.paramMap.get('id');
-    if (param) {
-      const id = +param;
-      this.getProduct(id);
-    }
+    this.productService.triggerEnter.subscribe((res)=>{
+      const param = res;
+      this.paramCategory = localStorage.getItem("ekart_category");
+      if (param) {
+        const id = +param;
+        this.getProduct(id);
+      }
+    }); 
   }
   getProduct(id: number) {
-    this.productService.getProduct(id).subscribe((data)=>{
+    this.productService.getProduct(id).subscribe((data) => {
       this.product = data;
-      this.ngOnInit();
     });
   }
   addToCart(product) {
     this.addToCartMsg = "";
     this.productService.productAddedTocart = this.productService.getProductFromCart();
-    this.productService.productAddedTocart.forEach((data,index) => {
+    this.productService.productAddedTocart.forEach((data, index) => {
       if (data.productId === product.productId) {
-        data.count += product.count;        
+        data.count += product.count;
         return;
       }
     });
@@ -51,9 +53,9 @@ export class ProductDetailComponent implements OnInit {
   }
 
   onBack(): void {
-    if(this.paramCategory){
+    if (this.paramCategory) {
       this.router.navigate(['/category/' + this.paramCategory]);
-    }else{
+    } else {
       this.router.navigate(['/category/' + "/electronics"]);
     }
   }

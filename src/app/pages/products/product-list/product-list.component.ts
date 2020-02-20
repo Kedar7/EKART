@@ -48,8 +48,8 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.router.params.subscribe(params => {
-        // this.localstorageservice.setData(authentication, function (credentials) { });
-      localStorage.setItem("nalanda_category",params.id)
+      // this.localstorageservice.setData(data, function (credentials) { });
+      localStorage.setItem("ekart_category", params.id)
       this.header = params.id;
       this.showImage = true;
       this.productService.getProducts(params.id).subscribe({

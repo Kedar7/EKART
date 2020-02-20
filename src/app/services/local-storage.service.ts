@@ -8,13 +8,13 @@ export class LocalStorageService {
   constructor(private http: Http) { }
   getData() {
     let state = {};
-    state['username'] = localStorage.getItem('__nalanda-user-name');
-    state['category'] = localStorage.getItem('__nalanda-category');
+    state['username'] = localStorage.getItem('__ekart-user-name');
+    state['category'] = localStorage.getItem('__ekart-category');
     return state;
   }
   setData(params, callback) {
-    localStorage.setItem('__nalanda-user-name', params.username);
-    localStorage.setItem('__nalanda-category',params.id)
+    localStorage.setItem('__ekart-user-name', params.username);
+    localStorage.setItem('__ekart-category',params.id)
     callback(this.getData());
   }
 }

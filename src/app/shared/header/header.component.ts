@@ -4,19 +4,20 @@ import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
-
 declare var $: any;
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
 export class HeaderComponent implements OnInit {
   public model: any;
   products = [];
   isHiddenLoginBtn: boolean = false;
   cartItemCount: number = 0;
-
+  @Output() eventTrigger = new EventEmitter();
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
   constructor(private route: Router, private router: ActivatedRoute, private productservice: ProductService) {
   }
@@ -44,7 +45,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     localStorage.clear();
     this.productservice.currentCount.subscribe(msg => {
-      this.cartItemCount = msg
+      this.cartItemCount = msg;
     });
     $(document).ready(function () {
       $(".trigger").click(function () {
@@ -63,9 +64,10 @@ export class HeaderComponent implements OnInit {
     if ($event) {
       this.route.navigate(['/product/' + $event.item.productId]);
     }
+    this.productservice.triggerMessage($event.item.productId);
   }
   logout() {
-    localStorage.removeItem("__nalanda-user-name");
+    localStorage.removeItem("__ekart-user-name");
     this.isHiddenLoginBtn = false;
     this.route.navigate(['/welcome']);
 

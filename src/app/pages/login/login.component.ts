@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, FormControl, Validators, FormArray } from '@ang
 import { Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LocalStorageService } from '../../services/local-storage.service';
-import { Local } from 'protractor/built/driverProviders';
 declare var $: any;
 
 @Component({

@@ -26,51 +26,18 @@
                  [title]='product.productName'>
           </div>
           <div class="mdl-card__supporting-text">
-            <div class="mdl-card__title-text"> <a [routerLink]="['/product', product.productId]">
+            <div class="mdl-card__title-text"> <a (click)="goToProductDetail(product.productId)">
                Name: {{ product.productName | slice:0:16 }}<span *ngIf="product.productName.length > 16">...</span>
               </a></div>
            Details: {{ product.productCode | lowercase | convertToSpaces: '-' }}
           </div>
          
-            <button mat-raised-button color="primary" class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" [routerLink]="['/product', product.productId]">
+            <button mat-raised-button color="primary" class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" (click)="goToProductDetail(product.productId)">
               Read more
             </button>
         </div>
       </div>
     </div>
-    <!-- <div class="row">
-    <div class='table-responsive'>
-      <table class='table'
-             *ngIf='products && products.length'>
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Product</th>
-            <th>Code</th>
-            <th>Available</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor='let product of filteredProducts'>
-            <td>
-              <img *ngIf='showImage'
-                   [src]='product.imageUrl'
-                   [title]='product.productName'
-                   [style.width.px]='imageWidth'
-                   [style.margin.px]='imageMargin'>
-            </td>
-            <td>
-              <a [routerLink]="['/products', product.productId]">
-                {{ product.productName }}
-              </a>
-            </td>
-            <td>{{ product.productCode | lowercase | convertToSpaces: '-' }}</td>
-            <td>{{ product.releaseDate }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div> -->
   </div>
 </div>
 <div *ngIf='errorMessage'

@@ -16,21 +16,18 @@ export class ProductDetailComponent implements OnInit {
   addToCartMsg;
   cartItemCount;
   isAddToCart: boolean;
-  isCalled : boolean = true;
+  isCalled: boolean = true;
 
   constructor(private route: ActivatedRoute,
     private router: Router,
     private productService: ProductService, private localStorageService: LocalStorageService) {
   }
   ngOnInit() {
-    this.productService.triggerEnter.subscribe((res)=>{
-      const param = res;
-      this.paramCategory = localStorage.getItem("ekart_category");
-      if (param) {
-        const id = +param;
-        this.getProduct(id);
-      }
-    }); 
+    let param;
+    this.productService.triggerEnter.subscribe((res) => {
+      param = res;
+      this.getProduct(parseInt(param));
+    });
   }
   getProduct(id: number) {
     this.productService.getProduct(id).subscribe((data) => {

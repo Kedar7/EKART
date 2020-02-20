@@ -28,7 +28,7 @@ export class ProductListComponent implements OnInit {
   filteredProducts: IProduct[] = [];
   products: IProduct[] = [];
 
-  constructor(private productService: ProductService, private router: ActivatedRoute, private localStorageService: LocalStorageService) {
+  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private localStorageService: LocalStorageService, private router : Router) {
 
   }
 
@@ -45,9 +45,14 @@ export class ProductListComponent implements OnInit {
   toggleImage(): void {
     this.showImage = true;
   }
+  goToProductDetail(productId){
+    this.router.navigate(['/product/' + productId]);
+    this.productService.triggerMessage(productId);
+
+  }
 
   ngOnInit(): void {
-    this.router.params.subscribe(params => {
+    this.activatedRoute.params.subscribe(params => {
       // this.localstorageservice.setData(data, function (credentials) { });
       localStorage.setItem("ekart_category", params.id)
       this.header = params.id;

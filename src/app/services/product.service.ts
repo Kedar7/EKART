@@ -18,7 +18,7 @@ export class ProductService {
     "clothes": 'api/products/clothes.json',
   };
 
-  private triggerSubject = new BehaviorSubject(1);
+  private triggerSubject = new BehaviorSubject(null);
   triggerEnter = this.triggerSubject.asObservable();
 
   private currentCartCount = new BehaviorSubject(0);

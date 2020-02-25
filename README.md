@@ -12,7 +12,8 @@ Things that need to be done (In progress) :
 1. Implementing BEM (Block, Element, Modifier) and SCSS.
 2. Implement State Management using NgRx.
 3. Need to revamp architecture.
-4. Need to add remove in my-cart component.
+4. Need to add "remove" feature in add-to-cart component.
+5. Need to make application responsive.
 
 ## Development server
 

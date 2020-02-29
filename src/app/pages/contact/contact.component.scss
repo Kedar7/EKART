@@ -1,0 +1,44 @@
+form {
+  padding: 10%;
+}
+
+.contact-img-associates {
+  max-width: 480px;
+  height: 188px;
+  display: block;
+  margin: 10px 13rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact-flex-container-images {
+  margin-top: 6%;
+  display: flex;
+  div {
+    background-color: #fafafa;
+    margin: 10px;
+    padding: 10px;
+  }
+}
+
+.contact-flex-container-contact-info {
+  margin: 5% 5%;
+  div {
+    background-color: #fafafa;
+    border-right: 1px solid #ddd;
+    align-content: center;
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &:nth-last-child(1){
+        border-right: 1px solid white;
+
+    }
+  }
+}
+
+.contact-split-5 {
+  margin-top: 6%;
+}

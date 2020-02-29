@@ -1,0 +1,81 @@
+.login-box-wrapper {
+  position: absolute;
+  height: 19rem;
+  top: -5rem;
+  left: 0.5rem;
+  width: 81%;
+  background: linear-gradient(to top, #02be8a, #0082c3);
+  button {
+    position: absolute;
+    top: 49%;
+    left: 32%;
+    background: white;
+  }
+  h5 {
+    color: white;
+    position: absolute;
+    top: 34%;
+    left: 21%;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    height: 19rem;
+    width: 48px;
+    -webkit-transform: skewX(17deg);
+    transform: skewX(8deg);
+    right: -24px;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(to top, #02be8a, #0082c3);
+  }
+  h3 {
+    color: white;
+    margin: 2%;
+    border-bottom: 1px solid white;
+    width: 39%;
+  }
+}
+.btn-primary {
+  background: #ec6621;
+}
+.modal-footer {
+  margin-left: 6%;
+  margin-right: -3%;
+}
+
+form {
+  .form-group {
+    margin: 6%;
+    .form-control {
+      margin: 5%;
+    }
+  }
+}
+
+h4 {
+  position: absolute;
+  top: -3rem;
+  left: -1rem;
+  font-weight: 100;
+}
+
+.btn-login {
+  outline: none;
+  img {
+    position: absolute;
+    width: 36px;
+    top: 19%;
+    right: 14rem;
+  }
+}
+button {
+  transition: none;
+  outline: none;
+}
+span > i {
+  position: absolute;
+  top: 25%;
+  right: 23%;
+  color: black;
+}

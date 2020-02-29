@@ -19,22 +19,24 @@
     <div class="row">
       <div class="col-md-4"
            *ngFor='let product of filteredProducts'>
-        <div class="mdl-card mdl-shadow--2dp demo-card-square">
-          <div class="mdl-card__title mdl-card--expand">
+        <div class="product-card product-shadow--2dp product-list-card-square">
+          <div class="product-card__title product-card--expand">
             <img *ngIf='showImage'
                  [src]='product.imageUrl'
                  [title]='product.productName'>
           </div>
-          <div class="mdl-card__supporting-text">
-            <div class="mdl-card__title-text"> <a (click)="goToProductDetail(product.productId)">
-               Name: {{ product.productName | slice:0:16 }}<span *ngIf="product.productName.length > 16">...</span>
+          <div class="product-card__supporting-text">
+            <div class="product-card__title-text"> <a (click)="goToProductDetail(product.productId)">
+                Name: {{ product.productName | slice:0:16 }}<span *ngIf="product.productName.length > 16">...</span>
               </a></div>
-           Details: {{ product.productCode | lowercase | convertToSpaces: '-' }}
+            Details: {{ product.productCode }}
           </div>
-         
-            <button mat-raised-button color="primary" class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" (click)="goToProductDetail(product.productId)">
-              Read more
-            </button>
+          <button mat-raised-button
+                  color="primary"
+                  class="product-button product-button--accent product-js-button product-js-ripple-effect"
+                  (click)="goToProductDetail(product.productId)">
+            Read more
+          </button>
         </div>
       </div>
     </div>

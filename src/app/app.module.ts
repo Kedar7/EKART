@@ -20,7 +20,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchFilterPipe } from './shared/filter-pipe';
-import { LetterBoldPipe } from './shared/letter-bold.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -47,7 +46,6 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     SearchFilterPipe,
-    LetterBoldPipe,
     LoginComponent,
     RegisterComponent,
     AuthComponent

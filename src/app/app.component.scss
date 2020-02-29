@@ -1,54 +1,31 @@
-.nav-link {
-  font-size: large;
+$zero: 0;
+
+@mixin absoluteValue($top) {
+  position: absolute;
+  right: $zero;
+  left: $zero;
+  bottom: $zero;
+  top: $top; 
 }
-.sidenav {
-  width: 200px;
-}
-.mat-drawer-size{
+.app-mat-drawer-size {
   width: 26%;
-  box-shadow: 9px 0 7px rgba(0,0,0,.1)
+  box-shadow: 9px 0 7px rgba(0, 0, 0, 0.1);
 }
-.sidenav .mat-toolbar {
-  background: inherit;
-}
-mat-drawer-container{
-  position: absolute !important;
-  right: 0px !important;
-  left: 0px !important;
-  bottom: 0px !important;
-  top: 10% !important;
+mat-drawer-container {
+  @include absoluteValue(10%);
 }
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-.spacer{
-  flex: 1 1 auto;
-}
-.remove-margin{
-  margin-left: 0 !important;
+.app-remove-margin {
+  margin-left: $zero !important;
   overflow-y: hidden;
 }
-.backdrop-container {
+.app-backdrop-container {
   z-index: 10000;
-  background: rgba(0,0,0,0.5);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  @include absoluteValue($zero);
   height: 200%;
   overflow: hidden;
 }
-.disable-scroll{
+.disable-scroll {
   overflow-y: hidden;
 }
-.category-container{
-  background: white;
-  position: absolute;
-  height: 100%;
-  width: 70%
-}
-

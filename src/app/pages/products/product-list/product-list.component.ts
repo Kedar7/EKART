@@ -6,7 +6,7 @@ import { LocalStorageService } from '../../../services/local-storage.service';
 
 @Component({
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
   pageTitle = 'Product List';
@@ -28,7 +28,7 @@ export class ProductListComponent implements OnInit {
   filteredProducts: IProduct[] = [];
   products: IProduct[] = [];
 
-  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private localStorageService: LocalStorageService, private router : Router) {
+  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private localStorageService: LocalStorageService, private router: Router) {
 
   }
 
@@ -45,7 +45,7 @@ export class ProductListComponent implements OnInit {
   toggleImage(): void {
     this.showImage = true;
   }
-  goToProductDetail(productId){
+  goToProductDetail(productId) {
     this.router.navigate(['/product/' + productId]);
     this.productService.triggerMessage(productId);
 

@@ -377,3 +377,8 @@ main {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+/****** For mobile version(responsive)*****/
+
+@media (min-width:320px) {
+  
+}

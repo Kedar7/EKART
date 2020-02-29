@@ -1,4 +1,3 @@
-
 <div class='card'
      *ngIf='product'>
   <div class='card-header'>
@@ -7,7 +6,7 @@
   <div class='card-body'>
     <div class='row'>
       <div class='col-md-5'>
-        <img class='center-block img-responsive'
+        <img class='product-detail-center-block img-responsive'
              [style.width.px]='200'
              [style.margin.px]='2'
              [src]='product.imageUrl'
@@ -20,7 +19,7 @@
         </div>
         <div class='row'>
           <div class='col-md-4'>Code:</div>
-          <div class='col-md-8'>{{product.productCode | lowercase | convertToSpaces: '-'}}</div>
+          <div class='col-md-8'>{{product.productCode }}</div>
         </div>
         <div class='row'>
           <div class='col-md-4'>Description:</div>
